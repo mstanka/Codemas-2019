@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Codemas 2019</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Codemas 2019</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap&subset=latin-ext" rel="stylesheet">
+</head>
+
+<body>
+	<header>
+		<div>
+			<img src="obrazky/present.png" alt="present">
+        <span id="presentScore">0/2</span>
+      </div> 
+
+      <div>
+        <img src="obrazky/gingerbread.png" alt="gingerbread">
+        <span id="gingerbreadScore">0/2</span>
+      </div>
+
+      <div>
+        <img src="obrazky/heart.png" alt="heart">
+        <span id="lifeCount">3/3</span>
+      </div>
+
+      <div id="time">
+        00:00
+      </div>      
+    </header>
+
+    <div id="introduction">
+      <div class="content">
+        <p>Tvým úkolem je co nejrychleji sesbírat perníčky a dárečky na mapě. Zároveň si musíš dávat pozor na zákeřné ledové bodliny.</p>
+
+        <p>Pohybovat se můžeš pomocí šipek.</p>
+
+        <button id="start">Start hry</button>
+      </div>
+    </div>
+
     <div id="game">
       <canvas id="canvas"></canvas>
     </div>
