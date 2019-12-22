@@ -24,7 +24,8 @@ header img {
   margin-right: 10px;
 }
 
-#introduction {
+#introduction,
+#dead-end {
   display: none;
   justify-content: center;
   align-items: center;
