@@ -25,7 +25,8 @@ header img {
 }
 
 #introduction,
-#dead-end {
+#dead-end,
+#end {
   display: none;
   justify-content: center;
   align-items: center;
@@ -34,6 +35,10 @@ header img {
   height: 600px;
   background-image: url("obrazky/background.png");
   background-size: 100% 100%;
+}
+
+#end {
+    background-image: url("obrazky/background_win.png");
 }
 
 .content {
