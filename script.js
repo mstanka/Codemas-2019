@@ -25,6 +25,9 @@ let game = {
   result: document.querySelector("#result"),
   endButton: document.querySelector("#again2"),
   endButtonDead: document.querySelector("#again"),
+  music: document.querySelector("#music"),
+  collectedSound: document.querySelector("#collected"),
+  lifeDownSound: document.querySelector("#life-down"),
   gingerbreadScore: 0,
   presentScore: 0,
   time: 0,
@@ -326,6 +329,8 @@ function startGame() {
   createGingerbreads();
   createExit();
 
+  game.music.play();
+
   changeWindow("game");
   update();
 }
@@ -504,7 +509,9 @@ function colItems() {
       presents.splice(index, 1);
 
       increaseScore("present");
-    }
+      
+      game.collectedSound.play();
+    }   
   }
 
   for (let index = 0; index < gingerbreads.length; index++) {
@@ -512,7 +519,9 @@ function colItems() {
       gingerbreads.splice(index, 1);
 
       increaseScore("gingerbread");
-    }
+
+      game.collectedSound.play();
+    }    
   }
 }
 
@@ -521,6 +530,8 @@ function colSpikes() {
     if (objectColCheck(player, spikes[index])) {
       player.life--;
 
+      game.lifeDownSound.play();
+      
       game.lifeElement.innerHTML = `${player.life}/3`;
 
       resetPlayer();
@@ -552,12 +563,14 @@ function movement() {
     if (player.velX < player.speed) {
       player.velX++;
     }
+    hero.src = "obrazky/elf_right.png";
   }
   //levá šipka
   if (keys[37]) {
     if (player.velX > -player.speed) {
       player.velX--;
     }
+    hero.src = "obrazky/elf_left.png";
   }
 
   if (keys[38] || keys[32]) {
